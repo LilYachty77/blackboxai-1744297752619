@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.onlinepaluwagan">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
+        android:name=".PaluwaganApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,5 +26,7 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".RoleSelectionActivity" />
         <activity android:name=".DashboardActivity" />
+        <activity android:name=".HeadDashboardActivity" />
+        <activity android:name=".MemberDashboardActivity" />
     </application>
 </manifest>
