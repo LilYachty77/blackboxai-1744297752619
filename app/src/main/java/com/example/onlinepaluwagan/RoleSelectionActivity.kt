@@ -52,7 +52,11 @@ class RoleSelectionActivity : AppCompatActivity() {
                 )
                 .addOnSuccessListener {
                     // Navigate to appropriate dashboard based on role
-                    val dashboardIntent = Intent(this, DashboardActivity::class.java).apply {
+                    val dashboardIntent = when (role) {
+                        "head" -> Intent(this, HeadDashboardActivity::class.java)
+                        "member" -> Intent(this, MemberDashboardActivity::class.java)
+                        else -> Intent(this, DashboardActivity::class.java)
+                    }.apply {
                         putExtra("USER_ROLE", role)
                         // Clear back stack
                         flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
